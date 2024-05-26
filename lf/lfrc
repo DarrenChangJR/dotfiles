@@ -1,0 +1,12 @@
+set previewer "~/.config/lf/lf_kitty_preview"
+set cleaner "~/.config/lf/lf_kitty_clean"
+set hidden true
+set history false
+set mouse true
+
+map <enter> open
+cmd open ${{
+  case $(file --mime-type "$f" -b) in
+    video/*) setsid -f mpv "$f" -quiet >/dev/null 2>&1 ;;
+  esac
+}}

@@ -4,5 +4,8 @@
     - waybar/
     - hypr/
     - kitty/
+    - mpv/
+    - lf/
 
-- 
+- /etc/nixos/
+    - configuration.nix
