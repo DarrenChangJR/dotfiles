@@ -19,18 +19,12 @@
     hostName = "nixos";
     networkmanager = {
       enable = true;
-      # dns = "none";
+      dns = "none";
     };
   };
 
   services = {
     automatic-timezoned.enable = true;
-    resolved = {
-      enable = true;
-      dnssec = "true";
-      domains = [ "~." ];
-      dnsovertls = "true";
-    };
     pipewire = {
       enable = true;
       audio.enable = true;
