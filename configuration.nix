@@ -15,12 +15,18 @@
   };
 
   networking = {
+    nameservers = [ "1.1.1.1" "1.0.0.1" ];
     hostName = "nixos";
-    networkmanager.enable = true;
   };
 
   services = {
     automatic-timezoned.enable = true;
+    resolved = {
+      enable = true;
+      dnssec = "true";
+      domains = [ "~." ];
+      dnsovertls = "true";
+    };
     pipewire = {
       enable = true;
       audio.enable = true;
@@ -115,6 +121,7 @@
     nix-ld.enable = true;
     steam.enable = true;
     bash.shellAliases = {
+      blue = "bluetoothctl";
       google-chrome-stable = "google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime";
     };
     git = {

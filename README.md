@@ -1,11 +1,11 @@
 # Managing Dotfiles
 
 - ~/.config/*
-    - waybar/
     - hypr/
     - kitty/
-    - mpv/
     - lf/
+    - mpv/
+    - waybar/
 
 - /etc/nixos/
     - configuration.nix
