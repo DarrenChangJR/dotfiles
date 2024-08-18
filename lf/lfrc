@@ -5,6 +5,7 @@ set history false
 set mouse true
 
 map <enter> open
+map <delete> delete
 cmd open ${{
   case $(file --mime-type "$f" -b) in
     video/*) setsid -f mpv "$f" -quiet >/dev/null 2>&1 ;;

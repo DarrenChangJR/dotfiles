@@ -111,7 +111,7 @@
 
     "pulseaudio": {
        "format": "{icon} {volume}%",
-       "format-bluetooth": "{icon} {volume}%",
+       "format-bluetooth": " {volume}%",
        "format-muted": " OFF",
        "format-icons": {
            "headphones": "",

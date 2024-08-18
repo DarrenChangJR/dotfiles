@@ -25,6 +25,7 @@
 
   services = {
     automatic-timezoned.enable = true;
+    gnome.gnome-keyring.enable = true;
     pipewire = {
       enable = true;
       audio.enable = true;
@@ -35,7 +36,8 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    enable = true;
+    type = "fcitx5";
     fcitx5.addons = with pkgs; [ fcitx5-rime fcitx5-hangul ];
   };
 
@@ -118,6 +120,7 @@
     waybar.enable = true;
     nix-ld.enable = true;
     steam.enable = true;
+    ssh.startAgent = true;
     bash.shellAliases = {
       blue = "bluetoothctl";
       google-chrome-stable = "google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime";
