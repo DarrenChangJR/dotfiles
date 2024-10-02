@@ -36,6 +36,8 @@
     };
   };
 
+  virtualisation.vmware.host.enable = true;
+
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
