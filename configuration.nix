@@ -52,7 +52,7 @@
       noto-fonts-extra
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      nerd-fonts.jetbrains-mono
     ];
   };
 
@@ -62,6 +62,7 @@
     nvidia.configuration = { 
       services.xserver.videoDrivers = [ "nvidia" ];
       hardware.nvidia = {
+        open = true;
         modesetting.enable = true;
         nvidiaSettings = true;
         package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -70,8 +71,8 @@
             enable = true;
             enableOffloadCmd = true;
           };
-          nvidiaBusId = "PCI:1:0:1";
-          amdgpuBusId = "PCI:1:0:0";
+          nvidiaBusId = "PCI:1:0:0";
+          amdgpuBusId = "PCI:5:0:0";
         };
       };
     };
@@ -122,7 +123,6 @@
     light.enable = true;
     waybar.enable = true;
     nix-ld.enable = true;
-    steam.enable = true;
     ssh.startAgent = true;
     bash.shellAliases = {
       blue = "bluetoothctl";
