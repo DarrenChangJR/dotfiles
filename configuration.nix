@@ -48,7 +48,8 @@
       ];
       settings = {
         globalOptions = {
-          "Hotkey/TriggerKeys" = { "0" = "Super+space"; };
+          "Hotkey" = { "EnumerateWithTriggerKeys" = true; };
+          "Hotkey/EnumerateForwardKeys" = { "0" = "Super+space"; };
         };
         inputMethod = {
           "Groups/0" = {
