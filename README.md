@@ -6,6 +6,7 @@
     - lf/
     - mpv/
     - waybar/
+    - fcitx5/
 
 - /etc/nixos/
     - configuration.nix
