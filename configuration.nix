@@ -137,6 +137,7 @@
       grim
       slurp
       wl-clipboard
+      wl-screenrec
       brave
     ];
   };
