@@ -120,16 +120,9 @@
       NIXOS_OZONE_WL = "1";
     };
     systemPackages = with pkgs; [
+      # terminal utilities
       kitty
-      google-chrome
-      vscode
       playerctl
-      hyprpaper
-      hyprlock
-      mpv-unwrapped
-      qbittorrent
-      zoom-us
-      discord
       jq
       lf
       ffmpegthumbnailer
@@ -138,7 +131,26 @@
       slurp
       wl-clipboard
       wl-screenrec
+      pandoc
+      texliveSmall
+      
+      # hyprland utilities
+      hyprpaper
+      hyprlock
+      
+      # browsers
+      google-chrome
       brave
+
+      # editors
+      vim
+      vscode
+
+      # misc GUI applications
+      mpv-unwrapped
+      qbittorrent
+      zoom-us
+      discord
     ];
   };
 
