@@ -26,7 +26,7 @@
 
   services = {
     automatic-timezoned.enable = true;
-    gnome.gnome-keyring.enable = true;
+    # gnome.gnome-keyring.enable = true;
     pipewire = {
       enable = true;
       audio.enable = true;
@@ -35,8 +35,6 @@
       pulse.enable = true;
     };
   };
-
-  virtualisation.vmware.host.enable = true;
 
   i18n.inputMethod = {
     enable = true;
@@ -71,11 +69,15 @@
     fontDir.enable = true;
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-extra
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       nerd-fonts.jetbrains-mono
     ];
+  };
+
+  qt = {
+    enable = true;
+    style = "adwaita-dark";
   };
 
   hardware.bluetooth.enable = true;
@@ -101,9 +103,13 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
   nix = {
     optimise.automatic = true;
-    settings.auto-optimise-store = true;
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
   };
 
   users.users.darren = {
@@ -123,6 +129,7 @@
       # terminal utilities
       kitty
       playerctl
+      brightnessctl
       jq
       lf
       ffmpegthumbnailer
@@ -131,38 +138,32 @@
       slurp
       wl-clipboard
       wl-screenrec
-      pandoc
-      texliveSmall
       
       # hyprland utilities
       hyprpaper
       hyprlock
-      
+
       # browsers
       google-chrome
       brave
 
       # editors
       vim
-      vscode
 
       # misc GUI applications
       mpv-unwrapped
       qbittorrent
-      zoom-us
       discord
     ];
   };
 
   programs = {
     hyprland.enable = true;
-    light.enable = true;
     waybar.enable = true;
     nix-ld.enable = true;
     ssh.startAgent = true;
     bash.shellAliases = {
       blue = "bluetoothctl";
-      google-chrome-stable = "google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime";
     };
     git = {
       enable = true;
